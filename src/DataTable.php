@@ -6,8 +6,9 @@ use DataTables\Adapters\QueryBuilder;
 use DataTables\Adapters\ResultSet;
 use DataTables\Adapters\ArrayAdapter;
 use Phalcon\Http\Response;
+use Phalcon\Di\Injectable;
 
-class DataTable extends \Phalcon\Mvc\User\Plugin
+class DataTable extends Injectable
 {
 
     protected $options;
