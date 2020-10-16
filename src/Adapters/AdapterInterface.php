@@ -157,9 +157,8 @@ abstract class AdapterInterface
                 if (!mb_strlen($search)) return;
 
                 foreach ($this->parser->getSearchableColumns() as $column) {
-                    $col = $this->columnExists($column, $getAlias);
-                    if (is_null($col)) continue;
-                    $closure($col, $this->sanitaze($search));
+                    if (is_null($column)) continue;
+                    $closure($column, $this->sanitaze($search));
                 }
                 break;
             case "column_search":
@@ -167,9 +166,8 @@ abstract class AdapterInterface
                 if (!$columnSearch) return;
 
                 foreach ($columnSearch as $key => $column) {
-                    $col = $this->columnExists($column['data'], $getAlias);
-                    if (is_null($col)) continue;
-                    $closure($col, $this->sanitaze($column['search']['value']));
+                    if (is_null($column['name'])) continue;
+                    $closure($column['name'], $this->sanitaze($column['search']['value']));
                 }
                 break;
             case "order":
@@ -183,7 +181,7 @@ abstract class AdapterInterface
                     $orderDir = $orderBy['dir'];
 
                     $column = $this->parser->getColumnById($orderBy['column']);
-                    $col = $this->columnExists($column, $getAlias);
+                    $col = $column;
                     if (is_null($col)) continue;
 
                     $orderArray[] = "{$col} {$orderDir}";

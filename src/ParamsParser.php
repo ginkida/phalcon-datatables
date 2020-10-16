@@ -52,7 +52,7 @@ class ParamsParser extends Injectable
     public function getSearchableColumns()
     {
         return array_filter(array_map(function ($item) {
-            return (isset($item['searchable']) && $item['searchable'] === "true") ? $item['data'] : null;
+            return (isset($item['searchable']) && $item['searchable'] === "true") ? $item['name'] : null;
         }, $this->params['columns']));
     }
 
