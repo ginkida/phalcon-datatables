@@ -3,7 +3,6 @@
     "description": "DataTables adapter for Phalcon Framework",
     "keywords": ["Phalcon", "DataTables", "Plugin"],
     "license": "MIT",
-    "version": "0.1",
     "autoload": {
       "psr-4": {
         "DataTables\\": "src/"
