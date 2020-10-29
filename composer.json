@@ -22,15 +22,6 @@
         "email": "qrotux@gmail.com"
       }
     ],
-    "minimum-stability": "dev",
-    "require": {
-
-    },
-    "extra": {
-      "branch-alias": {
-        "dev_master": "1.0-dev"
-      }
-    },
     "require-dev": {
       "phalcon/ide-stubs": "*",
       "fzaninotto/faker": "1.5.*@dev",
